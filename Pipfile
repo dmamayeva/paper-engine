@@ -15,11 +15,14 @@ langchain-chroma = "*"
 langchain-openai = "*"
 pysqlite3-binary = "*"
 python-dotenv = "*"
+elasticsearch = "*"
 
 [dev-packages]
 tqdm = "*"
 notebook = "==7.1.2"
 ipywidgets = "*"
+hyperopt = "*"
+faiss-cpu = "*"
 
 [requires]
 python_version = "3.12"

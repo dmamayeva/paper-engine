@@ -74,8 +74,15 @@ pipenv run jupyter notebook
 
 Evalutaion code is in the [notebooks/evaluation.ipynb](notebooks/evaluation.ipynb) notebook.
 ### Retrieval
+Elastic Search and FAISS were tested.
+The basic approach — without any boosting and *k=5* gave following results.
+**Elastic Search**
+* hit rate 0.811
+* mrr 0.678
 
-
+**FAISS**
+* hit rate 0.758
+* mrr 0.609
 ### RAG flow
 
 ## Monitoring
