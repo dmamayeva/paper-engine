@@ -14,6 +14,7 @@ chromadb = "*"
 langchain-chroma = "*"
 langchain-openai = "*"
 pysqlite3-binary = "*"
+python-dotenv = "*"
 
 [dev-packages]
 tqdm = "*"

@@ -70,7 +70,9 @@ cd notebooks
 pipenv run jupyter notebook
 ```
 
-## Evaluation 
+## Evaluation
+
+Evalutaion code is in the [notebooks/evaluation.ipynb](notebooks/evaluation.ipynb) notebook.
 ### Retrieval
 
 
