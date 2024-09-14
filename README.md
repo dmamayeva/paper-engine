@@ -77,13 +77,31 @@ Evalutaion code is in the [notebooks/evaluation.ipynb](notebooks/evaluation.ipyn
 Elastic Search and FAISS were tested.
 The basic approach — without any boosting and *k=5* gave following results.
 **Elastic Search**
-* hit rate 0.811
-* mrr 0.678
+* hit rate 0.798
+* mrr 0.647
 
 **FAISS**
 * hit rate 0.758
 * mrr 0.609
+
+
+
+**Improved Elastic Search**
+For the next experiments Elastic Search only is being used.
+Achieved results for the field: ^4 and size=9
+* hit_rate: 0.849
+* mrr: 0.654
+
 ### RAG flow
+
+For evaluation LLM-as-a-Judge (gpt-4o-mini-as-a-judge) was used. To reduce cost for OpenAI (next time going to try using open-source LLM) I used only gpt-4o-mini
+
+In 432 processed records (errors in JSON formatting and wrong keys were ignored):
+
+* Relevant: 423
+* Partly relevant: 9
+* Irrelevant: 0
+
 
 ## Monitoring
 
