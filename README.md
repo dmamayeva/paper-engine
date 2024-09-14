@@ -64,11 +64,18 @@ and then
 pipenv install
 ```
 
+Running streamlit application to check:
+```bash
+pipenv run streamlit run app/app.py
+```
+This command will open a web interface where you can ask questions and provide feedback for answers generated.
+
 Running Jupyter notebooks for experiments and see the dataset generation 
 ```bash
 cd notebooks
 pipenv run jupyter notebook
 ```
+
 
 ## Evaluation
 
