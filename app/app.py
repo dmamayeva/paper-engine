@@ -6,6 +6,8 @@ import uuid
 
 from dotenv import load_dotenv
 load_dotenv(dotenv_path='../.envrc')
+
+
 def print_log(message):
     print(message, flush=True)
 

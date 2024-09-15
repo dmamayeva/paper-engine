@@ -12,7 +12,7 @@ project_root = Path(__file__).resolve().parent.parent
 
 index_name = "article_info"
 
-def load_data(path=project_root/'notebooks/article_info.csv', index_name="article_info"):
+def load_data(path='article_info.csv', index_name="article_info"):
     # ingesting data
     es_client = Elasticsearch('http://localhost:9200') 
     
