@@ -16,6 +16,7 @@ langchain-openai = "*"
 pysqlite3-binary = "*"
 python-dotenv = "*"
 elasticsearch = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 tqdm = "*"

@@ -48,9 +48,31 @@ The papers are formatted from PDF into a text-friendly structure, enabling easy 
   - Emerging trends and research directions in deep learning
 
 ---
+## Preparing the application 
+Before running app, database should be initialized. 
 
-## Usage
+To do that, run [`prep.py`](app/app.py) script
+```bash
+export POSTRES_HOST=localhost
 
+cd app
+pipenv run python prep.py
+```
+---
+## Using application 
+
+To run the application you can use one of two ways listed:
+### Running it with Doker-compose 
+
+To run this app with docker:
+
+```bash
+docker-compose up
+```
+### Running locally
+#### Installing dependencies
+
+In case if you don't like or use docker:
 To manage dependencies, **pipenv** and **python 3.12** is used. 
 
 To install pipenv (in case of abscence):
