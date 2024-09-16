@@ -3,6 +3,7 @@ import ingest
 import rag
 import time
 import uuid
+import db
 
 from dotenv import load_dotenv
 load_dotenv(dotenv_path='../.envrc')
@@ -38,20 +39,20 @@ def main():
      # Feedback buttons
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("+1"):
+        if st.button("Cool answer!"):
             st.session_state.count += 1
             print_log(
                 f"Positive feedback received. New count: {st.session_state.count}"
             )
-            # save_feedback(st.session_state.conversation_id, 1)
+            db.save_feedback(st.session_state.conversation_id, 1)
             print_log("Positive feedback saved to database")
     with col2:
-        if st.button("-1"):
+        if st.button("Wrong thing"):
             st.session_state.count -= 1
             print_log(
                 f"Negative feedback received. New count: {st.session_state.count}"
             )
-            # save_feedback(st.session_state.conversation_id, -1)
+            db.save_feedback(st.session_state.conversation_id, -1)
             print_log("Negative feedback saved to database")
 
     st.write(f"Current count: {st.session_state.count}")

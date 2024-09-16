@@ -53,10 +53,11 @@ Before running app, database should be initialized.
 
 To do that, run [`prep.py`](app/app.py) script
 ```bash
-export POSTRES_HOST=localhost
-
 cd app
-pipenv run python prep.py
+pipenv shell
+
+export POSTGRES_HOST=localhost 
+python prep.py
 ```
 ---
 ## Using application 
@@ -69,6 +70,7 @@ To run this app with docker:
 ```bash
 docker-compose up
 ```
+
 ### Running locally
 #### Installing dependencies
 

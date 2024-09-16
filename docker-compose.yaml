@@ -1,17 +1,25 @@
-version: '3.8'
+version: '3.12'
 
 services:
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m  # Set Java heap size
     ports:
       - "${ELASTIC_PORT:-9200}:9200"
       - "9300:9300"
     volumes:
       - elasticsearch_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      retries: 5
+
+
 
 
   postgres:
@@ -31,15 +39,14 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: streamlit
-    # environment:
-    #   - ELASTIC_URL=http://elasticsearch:${ELASTIC_PORT:-9200}
-    #   - POSTGRES_HOST=postgres
-    #   - POSTGRES_DB=${POSTGRES_DB}
-    #   - POSTGRES_USER=${POSTGRES_USER}
-    #   - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    #   - MODEL_NAME=${MODEL_NAME}
-    #   - INDEX_NAME=${INDEX_NAME}
-    #   - OPENAI_API_KEY=${OPENAI_API_KEY}
+    environment:
+      - ELASTIC_URL=http://elasticsearch:${ELASTIC_PORT:-9200}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - INDEX_NAME=${INDEX_NAME}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     ports:
       - "${STREAMLIT_PORT:-8501}:8501"
     depends_on:
@@ -60,6 +67,5 @@ services:
 
 volumes:
   elasticsearch_data:
-  ollama_data:
   postgres_data:
   grafana_data:
