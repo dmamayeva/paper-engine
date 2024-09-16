@@ -66,6 +66,10 @@ To run the application you can use one of two ways listed:
 ### Running it with Doker-compose 
 
 To run this app with docker:
+add in [`.env`](.env)
+```bash
+OPENAI_API_KEY=YOUR_KEY
+```
 
 ```bash
 docker-compose up
