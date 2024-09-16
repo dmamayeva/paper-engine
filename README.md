@@ -71,36 +71,6 @@ To run this app with docker:
 docker-compose up
 ```
 
-### Running locally
-#### Installing dependencies
-
-In case if you don't like or use docker:
-To manage dependencies, **pipenv** and **python 3.12** is used. 
-
-To install pipenv (in case of abscence):
-
-```bash
-pip install pipenv
-```
-and then
-
-```bash
-pipenv install
-```
-
-Running streamlit application to check:
-```bash
-pipenv run streamlit run app/app.py
-```
-This command will open a web interface where you can ask questions and provide feedback for answers generated.
-
-Running Jupyter notebooks for experiments and see the dataset generation 
-```bash
-cd notebooks
-pipenv run jupyter notebook
-```
-
-
 ## Evaluation
 
 Evalutaion code is in the [notebooks/evaluation.ipynb](notebooks/evaluation.ipynb) notebook.
