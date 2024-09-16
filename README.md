@@ -70,7 +70,11 @@ To run this app with docker:
 ```bash
 docker-compose up
 ```
-
+### Running it locally 
+```bash
+cd app
+streamlit run app.py
+```
 ## Evaluation
 
 Evalutaion code is in the [notebooks/evaluation.ipynb](notebooks/evaluation.ipynb) notebook.
